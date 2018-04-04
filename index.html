@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Email Validate</title>
+</head>
+<body>
+  <div style="margin:auto; width:50%;border: 3px solid green;padding: 10px;">
+    <form style="text-align:center">
+      <p>check email:</p>
+      <input type="text" placeholder="your email.." name="email" id="email">
+      <button id="check" type="button">Check</button>
+      </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="./lib/validate-email.js"></script>
+  <script>
+    $("#email").keyup(function(){
+      if($("#email").validate()){
+        $("input").css({"border-color":"green"})
+      }else{
+        $("input").css({"border-color":"red"})
+      }
+    })
+    $("#check").on("click",function(){
+      if($("#email").validate()){
+        alert("valid email format!!!")
+      }else{
+        alert("wrong email format!!!")
+      }
+    })
+  </script>
+</body>
+</html>
